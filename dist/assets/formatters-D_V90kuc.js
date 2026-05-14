@@ -1,0 +1,1 @@
+function e(e){return new Intl.NumberFormat(`en-PK`,{style:`currency`,currency:`PKR`,maximumFractionDigits:0}).format(e)}function t(e){return e>=1e5?`PKR ${Math.round(e/1e3)}k`:`PKR ${e.toLocaleString(`en-PK`)}`}function n(e){return e===`High`?`bg-green-100 text-green-700`:e===`Medium`?`bg-amber-100 text-amber-700`:`bg-rose-100 text-rose-700`}export{e as n,t as r,n as t};

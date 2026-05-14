@@ -31,7 +31,7 @@ export default function ComparePage() {
 
   return (
     <PageShell>
-      <section className="bg-gradient-to-b from-white to-background py-16">
+      <section className="page-section">
         <div className="container-page">
           <SectionHeader
             eyebrow="Field comparison"
@@ -42,11 +42,11 @@ export default function ComparePage() {
           <div className="glass-card mb-8 grid gap-4 p-5 md:grid-cols-3">
             {selected.map((fieldId, index) => (
               <label key={`${fieldId}-${index}`} className="grid gap-2">
-                <span className="text-sm font-black text-slate-600">Field {index + 1}</span>
+                <span className="text-sm font-black text-slate-600 dark:text-slate-300">Field {index + 1}</span>
                 <select
                   value={fieldId}
                   onChange={(event) => updateSelection(index, event.target.value)}
-                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-secondary outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-100"
+                  className="input-control"
                 >
                   {allFields.map((field) => (
                     <option key={field.id} value={field.id}>
@@ -66,14 +66,14 @@ export default function ComparePage() {
                     <span className={`rounded-full px-3 py-1 text-xs font-black ${demandColor(field.demandLevel)}`}>
                       {field.demandLevel} demand
                     </span>
-                    <h2 className="mt-4 text-2xl font-black tracking-tight">{field.title}</h2>
+                    <h2 className="mt-4 text-2xl font-black tracking-tight dark:text-white">{field.title}</h2>
                   </div>
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-primary">
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-primary dark:bg-blue-400/10 dark:text-blue-300">
                     <Icon name="chart" />
                   </span>
                 </div>
 
-                <p className="text-sm leading-7 text-slate-600">{field.description}</p>
+                <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">{field.description}</p>
 
                 <div className="mt-6 grid gap-3">
                   <Metric label="Average salary" value={`${shortPKR(field.salary.avg)}/month`} />
@@ -83,8 +83,8 @@ export default function ComparePage() {
                 </div>
 
                 <div className="mt-6">
-                  <p className="mb-2 text-xs font-black uppercase tracking-wider text-slate-400">Best roles</p>
-                  <p className="text-sm font-semibold text-slate-600">{field.roles.join(", ")}</p>
+                  <p className="mb-2 text-xs font-black uppercase tracking-wider text-slate-400 dark:text-slate-500">Best roles</p>
+                  <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">{field.roles.join(", ")}</p>
                 </div>
 
                 <Link to={`/roadmaps/${field.id}`} className="btn-primary mt-6">
@@ -116,9 +116,9 @@ export default function ComparePage() {
 
 function Metric({ label, value }) {
   return (
-    <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm">
-      <span className="text-sm font-bold text-slate-500">{label}</span>
-      <span className="text-right text-sm font-black text-secondary">{value}</span>
+    <div className="flex items-center justify-between gap-4 rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950">
+      <span className="text-sm font-bold text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="text-right text-sm font-black text-secondary dark:text-white">{value}</span>
     </div>
   );
 }

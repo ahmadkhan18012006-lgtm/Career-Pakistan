@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Icon from "./Icon.jsx";
+import { useCareer } from "../context/CareerContext.jsx";
 
 export default function FieldCard({ field }) {
+  const { isBookmarked, toggleBookmark } = useCareer();
+  const saved = isBookmarked(field.id);
+
   return (
     <motion.article
       className="glass-card flex h-full flex-col p-6"
@@ -13,16 +17,30 @@ export default function FieldCard({ field }) {
         <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-white shadow-lg shadow-blue-600/20">
           <Icon name={field.id.includes("ai") ? "brain" : field.id.includes("cloud") ? "cloud" : field.id.includes("cyber") ? "shield" : "code"} />
         </div>
-        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-extrabold text-slate-600">
-          {field.category}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-extrabold text-slate-600 dark:bg-white/10 dark:text-slate-300">
+            {field.category}
+          </span>
+          <button
+            type="button"
+            onClick={() => toggleBookmark(field.id)}
+            className={`grid h-9 w-9 place-items-center rounded-xl border text-sm font-black transition ${
+              saved
+                ? "border-blue-200 bg-blue-50 text-primary dark:border-blue-400/20 dark:bg-blue-400/10 dark:text-blue-300"
+                : "border-slate-200 bg-white text-slate-400 hover:text-primary dark:border-white/10 dark:bg-slate-950"
+            }`}
+            aria-label={saved ? "Remove bookmark" : "Bookmark career"}
+          >
+            {saved ? "S" : "+"}
+          </button>
+        </div>
       </div>
 
-      <h3 className="text-xl font-black tracking-tight text-secondary">{field.title}</h3>
-      <p className="mt-3 text-sm leading-7 text-slate-600">{field.description}</p>
+      <h3 className="text-xl font-black tracking-tight text-secondary dark:text-white">{field.title}</h3>
+      <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{field.description}</p>
 
       <div className="mt-5">
-        <p className="text-xs font-black uppercase tracking-wider text-slate-400">Skills</p>
+        <p className="text-xs font-black uppercase tracking-wider text-slate-400 dark:text-slate-500">Skills</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {field.skills.slice(0, 5).map((skill) => (
             <span key={skill} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-primary">
@@ -33,7 +51,7 @@ export default function FieldCard({ field }) {
       </div>
 
       <div className="mt-5">
-        <p className="text-xs font-black uppercase tracking-wider text-slate-400">Tools / technologies</p>
+        <p className="text-xs font-black uppercase tracking-wider text-slate-400 dark:text-slate-500">Tools / technologies</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {field.tools.slice(0, 5).map((tool) => (
             <span key={tool} className="rounded-full bg-green-50 px-3 py-1 text-xs font-bold text-green-700">
@@ -43,13 +61,13 @@ export default function FieldCard({ field }) {
         </div>
       </div>
 
-      <div className="mt-5 grid gap-4 text-sm text-slate-600">
+      <div className="mt-5 grid gap-4 text-sm text-slate-600 dark:text-slate-300">
         <div>
-          <p className="mb-2 font-black text-secondary">Job roles</p>
+          <p className="mb-2 font-black text-secondary dark:text-white">Job roles</p>
           <p>{field.roles.join(", ")}</p>
         </div>
         <div>
-          <p className="mb-2 font-black text-secondary">Pakistani companies</p>
+          <p className="mb-2 font-black text-secondary dark:text-white">Pakistani companies</p>
           <p>{field.companies.slice(0, 7).join(", ")}</p>
         </div>
       </div>

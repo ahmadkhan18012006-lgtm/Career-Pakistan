@@ -5,7 +5,34 @@ export const companies = [
   "10Pearls",
   "Netsol",
   "Contour Software",
-  "VentureDive"
+  "VentureDive",
+  "Afiniti",
+  "Tkxel",
+  "Confiz",
+  "CureMD",
+  "Folio3",
+  "Educative",
+  "Motive",
+  "Careem",
+  "S&P Global Pakistan",
+  "Dubizzle Labs",
+  "Bazaar Technologies",
+  "Airlift",
+  "TRG Pakistan",
+  "i2c",
+  "Nextbridge",
+  "PrograminStudio",
+  "Techlogix",
+  "Elixir Technologies",
+  "Xeven Solutions",
+  "CodeNinja",
+  "InvoZone",
+  "Stackup Solutions",
+  "Softpers",
+  "Cubix",
+  "Zameen Tech",
+  "Jazz Digital",
+  "PTCL Group"
 ];
 
 const phases = [
@@ -377,6 +404,162 @@ export const fieldCategories = [
         projects: ["Product requirement document", "User research report", "Feature prioritization board", "SaaS product case study"]
       }
     ]
+  },
+  {
+    title: "Specialized Engineering",
+    description: "High-value specialist tracks for students who want deeper technical ownership.",
+    fields: [
+      {
+        id: "ai-engineering",
+        title: "AI Engineering",
+        description: "Build AI features, evaluation systems, LLM workflows and production AI applications.",
+        skills: ["Python", "LLM integration", "RAG", "Vector databases", "Evaluation", "API design"],
+        tools: ["OpenAI APIs", "LangChain", "FastAPI", "Pinecone", "PostgreSQL", "Docker"],
+        roles: ["AI Engineer", "LLM Engineer", "AI Product Engineer"],
+        salary: { min: 100000, avg: 280000, max: 750000 },
+        demand: 91,
+        demandLevel: "High",
+        difficulty: 88,
+        learningTime: "10-14 months",
+        global: 94,
+        projects: ["RAG chatbot for university policies", "AI resume reviewer", "LLM evaluation dashboard", "Production AI assistant"]
+      },
+      {
+        id: "data-engineering",
+        title: "Data Engineering",
+        description: "Build reliable data pipelines, warehouses and analytics systems for product and business teams.",
+        skills: ["SQL", "Python", "ETL", "Data warehousing", "Batch pipelines", "Data quality"],
+        tools: ["Airflow", "dbt", "BigQuery", "PostgreSQL", "Spark", "Docker"],
+        roles: ["Data Engineer", "Analytics Engineer", "ETL Developer"],
+        salary: { min: 90000, avg: 230000, max: 620000 },
+        demand: 84,
+        demandLevel: "High",
+        difficulty: 82,
+        learningTime: "9-13 months",
+        global: 89,
+        projects: ["CSV to warehouse pipeline", "Airflow ETL workflow", "Data quality monitor", "Analytics engineering capstone"]
+      },
+      {
+        id: "qa-automation",
+        title: "QA Automation",
+        description: "Create automated test suites, improve release quality and prevent production regressions.",
+        skills: ["Manual testing", "Automation", "API testing", "Test design", "CI integration", "Bug reporting"],
+        tools: ["Playwright", "Cypress", "Postman", "Jira", "GitHub Actions", "Selenium"],
+        roles: ["QA Automation Engineer", "SDET", "Test Engineer"],
+        salary: { min: 65000, avg: 165000, max: 420000 },
+        demand: 78,
+        demandLevel: "High",
+        difficulty: 64,
+        learningTime: "5-9 months",
+        global: 76,
+        projects: ["E-commerce test plan", "API automation suite", "Playwright regression tests", "CI quality dashboard"]
+      },
+      {
+        id: "embedded-systems",
+        title: "Embedded Systems",
+        description: "Program hardware-oriented systems, firmware and device-level software.",
+        skills: ["C/C++", "Microcontrollers", "RTOS basics", "Serial protocols", "Debugging", "Electronics"],
+        tools: ["Arduino", "STM32", "ESP32", "PlatformIO", "Oscilloscope", "FreeRTOS"],
+        roles: ["Embedded Software Engineer", "Firmware Developer", "IoT Firmware Engineer"],
+        salary: { min: 65000, avg: 175000, max: 460000 },
+        demand: 67,
+        demandLevel: "Medium",
+        difficulty: 86,
+        learningTime: "10-15 months",
+        global: 78,
+        projects: ["Sensor firmware", "Bluetooth device controller", "RTOS task scheduler demo", "Embedded IoT capstone"]
+      },
+      {
+        id: "backend-engineering",
+        title: "Backend Engineering",
+        description: "Build secure APIs, databases, distributed services and business logic for web and mobile products.",
+        skills: ["Node.js", "Databases", "REST APIs", "Authentication", "Caching", "System design"],
+        tools: ["Express", "NestJS", "PostgreSQL", "Redis", "Docker", "Postman"],
+        roles: ["Backend Engineer", "API Developer", "Platform Developer"],
+        salary: { min: 85000, avg: 225000, max: 580000 },
+        demand: 89,
+        demandLevel: "High",
+        difficulty: 78,
+        learningTime: "8-12 months",
+        global: 88,
+        projects: ["Authentication API", "Booking system backend", "Redis caching demo", "Scalable API capstone"]
+      },
+      {
+        id: "cloud-security",
+        title: "Cloud Security",
+        description: "Secure cloud workloads, identities, networks and deployment pipelines.",
+        skills: ["Cloud IAM", "Threat detection", "Network security", "Compliance", "Incident response", "DevSecOps"],
+        tools: ["AWS IAM", "Security Hub", "Terraform", "Docker", "Wazuh", "CloudTrail"],
+        roles: ["Cloud Security Engineer", "DevSecOps Engineer", "Security Analyst"],
+        salary: { min: 100000, avg: 270000, max: 720000 },
+        demand: 83,
+        demandLevel: "High",
+        difficulty: 88,
+        learningTime: "10-14 months",
+        global: 90,
+        projects: ["IAM audit report", "Secure cloud landing zone", "Container security scan", "Cloud incident response playbook"]
+      },
+      {
+        id: "site-reliability-engineering",
+        title: "Site Reliability Engineering",
+        description: "Improve reliability, observability, incident response and uptime for production systems.",
+        skills: ["Linux", "Monitoring", "SLOs", "Incident response", "Automation", "Distributed systems"],
+        tools: ["Prometheus", "Grafana", "Kubernetes", "Terraform", "Python", "PagerDuty"],
+        roles: ["Site Reliability Engineer", "Reliability Engineer", "Platform Engineer"],
+        salary: { min: 110000, avg: 290000, max: 760000 },
+        demand: 82,
+        demandLevel: "High",
+        difficulty: 90,
+        learningTime: "11-15 months",
+        global: 92,
+        projects: ["Monitoring stack", "SLO dashboard", "Incident postmortem kit", "Auto-healing deployment demo"]
+      },
+      {
+        id: "mlops-engineering",
+        title: "MLOps Engineering",
+        description: "Deploy, monitor and maintain machine learning models in production environments.",
+        skills: ["ML pipelines", "Model serving", "Docker", "Monitoring", "CI/CD", "Data versioning"],
+        tools: ["MLflow", "FastAPI", "Docker", "DVC", "Kubernetes", "GitHub Actions"],
+        roles: ["MLOps Engineer", "ML Platform Engineer", "AI Infrastructure Engineer"],
+        salary: { min: 100000, avg: 285000, max: 760000 },
+        demand: 80,
+        demandLevel: "High",
+        difficulty: 90,
+        learningTime: "11-15 months",
+        global: 91,
+        projects: ["Model training pipeline", "FastAPI model server", "Model monitoring dashboard", "MLOps portfolio capstone"]
+      },
+      {
+        id: "database-administration",
+        title: "Database Administration",
+        description: "Manage, secure, tune and back up databases that power business-critical applications.",
+        skills: ["SQL", "Indexing", "Backups", "Replication", "Security", "Performance tuning"],
+        tools: ["PostgreSQL", "MySQL", "MongoDB", "pgAdmin", "Redis", "Linux"],
+        roles: ["Database Administrator", "Database Engineer", "SQL Developer"],
+        salary: { min: 70000, avg: 180000, max: 480000 },
+        demand: 74,
+        demandLevel: "Medium",
+        difficulty: 72,
+        learningTime: "7-11 months",
+        global: 74,
+        projects: ["Optimized SQL schema", "Backup automation", "Replication lab", "Database tuning report"]
+      },
+      {
+        id: "technical-writing",
+        title: "Technical Writing",
+        description: "Create developer docs, API guides, tutorials and product knowledge bases for technical teams.",
+        skills: ["Technical communication", "API docs", "Markdown", "Information architecture", "Research", "Editing"],
+        tools: ["Markdown", "Docusaurus", "GitHub", "Postman", "Figma", "Notion"],
+        roles: ["Technical Writer", "Developer Educator", "Documentation Specialist"],
+        salary: { min: 55000, avg: 145000, max: 360000 },
+        demand: 65,
+        demandLevel: "Medium",
+        difficulty: 56,
+        learningTime: "4-8 months",
+        global: 80,
+        projects: ["API documentation portal", "React tutorial series", "Product help center", "Developer docs portfolio"]
+      }
+    ]
   }
 ];
 
@@ -385,6 +568,29 @@ export const allFields = fieldCategories.flatMap((category) =>
     ...field,
     category: category.title,
     companies,
+    remote: field.global >= 78,
+    certifications: field.certifications || [
+      `${field.title} portfolio certificate`,
+      "GitHub project documentation",
+      field.title.includes("Cloud") || field.title.includes("DevOps") ? "AWS Cloud Practitioner" : "LinkedIn skill assessment"
+    ],
+    learningResources: field.learningResources || [
+      "Official documentation",
+      "Coursera guided project",
+      "YouTube crash course",
+      "GitHub open-source examples"
+    ],
+    hiringTrends: field.hiringTrends || [
+      `${field.demandLevel} demand in Pakistani software houses`,
+      field.global >= 78 ? "Strong remote and contract potential" : "Mostly hybrid or on-site early-career roles",
+      "Portfolio quality strongly impacts internship callbacks"
+    ],
+    salaryGrowth: [
+      { level: "Intern", salary: Math.round(field.salary.min * 0.45) },
+      { level: "Junior", salary: field.salary.min },
+      { level: "Mid", salary: field.salary.avg },
+      { level: "Senior", salary: field.salary.max }
+    ],
     roadmap: buildRoadmap(field)
   }))
 );
