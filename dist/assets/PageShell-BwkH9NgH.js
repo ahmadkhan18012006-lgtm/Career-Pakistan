@@ -1,0 +1,1 @@
+import{c as e,t}from"./proxy-DFfsu9g9.js";var n=e();function r({children:e,className:r=``}){return(0,n.jsx)(t.main,{className:r,initial:{opacity:0,y:14},animate:{opacity:1,y:0},exit:{opacity:0,y:-14},transition:{duration:.35,ease:`easeOut`},children:e})}export{r as t};

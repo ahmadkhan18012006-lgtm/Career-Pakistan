@@ -1,59 +1,37 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageShell from "../components/PageShell.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
-import DashboardCard from "../components/DashboardCard.jsx";
 import Icon from "../components/Icon.jsx";
 
-const features = [
-  {
-    title: "Smart Field Selector",
-    text: "Answer a few questions and get field suggestions based on your interests and strengths.",
-    icon: "spark"
-  },
-  {
-    title: "Roadmap Generator",
-    text: "Follow structured 1-year plans with skills, tools, projects and career outcomes.",
-    icon: "map"
-  },
-  {
-    title: "Future Scope Analysis",
-    text: "Compare Pakistani demand, salaries and global opportunities with visual insights.",
-    icon: "chart"
-  },
-  {
-    title: "Skill Tracker",
-    text: "Monitor progress, identify gaps and keep your learning momentum visible.",
-    icon: "target"
-  }
+const uspCards = [
+  ["AI-powered career matching", "Quiz logic maps your answers to high-fit career fields."],
+  ["Pakistan-specific salary insights", "Compare salary growth by level using localized PKR ranges."],
+  ["Internship-focused roadmaps", "Follow monthly milestones that lead to portfolio-ready work."],
+  ["Company recommendations", "See Pakistani companies aligned with your selected field."],
+  ["Industry trends", "Demand meters help you prioritize strong career options."],
+  ["Skill gap analysis", "Track current progress and suggested next skills."]
 ];
 
-const stats = [
-  { value: "20+", label: "Tech fields" },
-  { value: "4", label: "Roadmap levels" },
-  { value: "6", label: "Company signals" }
-];
+const tools = ["React", "Python", "Node.js", "TensorFlow", "Docker", "AWS", "Linux", "Figma", "Kubernetes", "MongoDB", "PostgreSQL", "Git/GitHub"];
+const ecosystem = ["Internship guidance", "Remote work opportunities", "Startup ecosystem", "Software houses", "Freelancing opportunities"];
 
 export default function LandingPage() {
   return (
     <PageShell>
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/70 to-background">
-        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-blue-200/40 blur-3xl" />
-        <div className="container-page relative grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1.02fr_0.98fr]">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
-          >
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/70 to-background transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+        <div className="container-page relative grid min-h-[calc(100vh-5rem)] items-center gap-12 py-14 lg:grid-cols-[1.02fr_0.98fr]">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
             <span className="eyebrow">
               <Icon name="graduation" className="h-4 w-4" />
-              BSCS, IT and Data Science students
+              BSCS, IT, SE, AI and Data Science students
             </span>
-            <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[1.02] tracking-tight text-secondary sm:text-6xl lg:text-7xl">
-              Find the Right Tech Career Path in Pakistan
+            <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[1.02] tracking-tight text-secondary sm:text-6xl lg:text-7xl dark:text-white">
+              CareerPath Pakistan for serious tech career planning
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-              Discover fields, compare market scope, follow practical roadmaps and track progress toward internships, freelance work and junior roles.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl dark:text-slate-300">
+              Match your interests, compare fields, follow actionable roadmaps, track progress and discover companies hiring Pakistani students.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/fields" className="btn-primary">
@@ -64,115 +42,132 @@ export default function LandingPage() {
                 Take Career Quiz
               </Link>
             </div>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {stats.map((stat) => (
-                <div key={stat.label} className="glass-card p-4">
-                  <p className="text-2xl font-black text-secondary">{stat.value}</p>
-                  <p className="text-sm font-semibold text-slate-500">{stat.label}</p>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
-          <motion.div
-            className="glass-card relative p-5 sm:p-7"
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.12, duration: 0.55 }}
-          >
+          <motion.div className="glass-card p-5 sm:p-7" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}>
             <div className="mb-6 flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm font-extrabold uppercase tracking-wider text-primary">Student match report</p>
-                <h2 className="mt-1 text-2xl font-black tracking-tight">Recommended path</h2>
+                <p className="text-sm font-extrabold uppercase tracking-wider text-primary dark:text-blue-300">Live career command center</p>
+                <h2 className="mt-1 text-2xl font-black tracking-tight dark:text-white">Smart guidance snapshot</h2>
               </div>
-              <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-black text-green-700">92%</span>
+              <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-black text-green-700 dark:bg-green-400/10 dark:text-green-300">92% match</span>
             </div>
-
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                ["Web Development", "React, Node.js, freelance projects", "code"],
-                ["AI / ML", "Python, data, ML model demos", "brain"],
-                ["Cloud Computing", "AWS, Linux, Docker, CI/CD", "cloud"],
-                ["Cybersecurity", "SOC, Linux, networking labs", "shield"]
-              ].map(([title, text, icon]) => (
-                <motion.div
-                  key={title}
-                  className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"
-                  whileHover={{ y: -5 }}
-                >
+                ["Career Quiz", "Score-based recommendations", "target", "/quiz"],
+                ["Roadmaps", "1-year monthly milestones", "map", "/roadmaps/web-development"],
+                ["Dashboard", "Progress, salaries, trends", "chart", "/dashboard"],
+                ["Companies", "Pakistan hiring database", "briefcase", "/companies"]
+              ].map(([title, text, icon, path]) => (
+                <motion.div key={title} whileHover={{ y: -5 }}>
+                <Link to={path} className="block h-full rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:border-blue-200 dark:border-white/10 dark:bg-slate-950 dark:hover:border-blue-400/40">
                   <span className="mb-4 grid h-11 w-11 place-items-center rounded-2xl bg-primary text-white">
                     <Icon name={icon} />
                   </span>
-                  <h3 className="font-black">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">{text}</p>
+                  <h3 className="font-black dark:text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">{text}</p>
+                </Link>
                 </motion.div>
               ))}
-            </div>
-
-            <div className="mt-5 rounded-2xl bg-secondary p-5 text-white">
-              <div className="flex items-center justify-between">
-                <span className="font-bold">Pakistan hiring readiness</span>
-                <span className="font-black text-green-300">High</span>
-              </div>
-              <div className="mt-4 h-3 overflow-hidden rounded-full bg-white/10">
-                <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-green-400 to-blue-400"
-                  initial={{ width: 0 }}
-                  animate={{ width: "84%" }}
-                  transition={{ delay: 0.4, duration: 0.9 }}
-                />
-              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="page-section">
         <div className="container-page">
           <SectionHeader
-            eyebrow="Core tools"
-            title="Built like a student career command center"
-            description="Every section is designed to reduce confusion and help students move from interest to practical execution."
+            eyebrow="Why CareerPath Pakistan?"
+            title="A complete guidance system, not just a list of fields"
+            description="Designed for Pakistani students who need clarity, proof of skill and career direction."
             align="center"
           />
-
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature) => (
-              <DashboardCard key={feature.title} title={feature.title}>
-                <span className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-primary">
-                  <Icon name={feature.icon} />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {uspCards.map(([title, text], index) => (
+              <motion.article
+                key={title}
+                className="glass-card p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.04 }}
+                whileHover={{ y: -5 }}
+              >
+                <span className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-primary dark:bg-blue-400/10 dark:text-blue-300">
+                  <Icon name={index % 2 ? "spark" : "chart"} />
                 </span>
-                <p className="text-sm leading-7 text-slate-600">{feature.text}</p>
-              </DashboardCard>
+                <h3 className="text-lg font-black dark:text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{text}</p>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="page-section">
         <div className="container-page">
-          <div className="glass-card grid items-center gap-8 overflow-hidden bg-secondary p-8 text-white lg:grid-cols-[1fr_auto] lg:p-10">
-            <div>
-              <p className="text-sm font-black uppercase tracking-widest text-blue-200">Start with clarity</p>
-              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-                Choose a field, follow a roadmap, build a portfolio.
-              </h2>
-              <p className="mt-4 max-w-2xl leading-8 text-slate-300">
-                The platform includes categorized fields, complete roadmaps, comparison tools, career insights and a student dashboard with charts.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link to="/fields" className="btn-primary bg-white text-secondary hover:bg-slate-100">
-                Browse Fields
-              </Link>
-              <Link to="/compare" className="btn-secondary border-white/20 bg-white/10 text-white hover:bg-white hover:text-secondary">
-                Compare Paths
-              </Link>
-            </div>
+          <div className="grid gap-4 md:grid-cols-4">
+            {[
+              [20, "+ Career Fields"],
+              [50, "+ Pakistani Companies"],
+              [100, "+ Learning Resources"],
+              [10, "K+ Students Guided"]
+            ].map(([value, label]) => (
+              <div key={label} className="glass-card p-6 text-center">
+                <AnimatedCounter value={value} suffix={label.startsWith("K") ? "K+" : "+"} />
+                <p className="mt-2 text-sm font-bold text-slate-500 dark:text-slate-400">{label.replace(/^\+ |^K\+ /, "")}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="container-page">
+          <SectionHeader eyebrow="Core tools" title="Technologies students will learn" description="A practical stack across software, AI, cloud, design, data and infrastructure." />
+          <div className="flex flex-wrap gap-3">
+            {tools.map((tool) => (
+              <motion.span key={tool} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-black text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-900 dark:text-slate-100" whileHover={{ y: -4 }}>
+                {tool}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="container-page">
+          <SectionHeader
+            eyebrow="Pakistan tech ecosystem"
+            title="Built around local career realities"
+            description="Guidance for internships, software houses, startups, remote work and freelancing opportunities."
+            align="center"
+          />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            {ecosystem.map((item) => (
+              <motion.div key={item} className="glass-card p-5 text-center" whileHover={{ y: -5 }}>
+                <span className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-green-50 text-accent dark:bg-green-400/10 dark:text-green-300">
+                  <Icon name="briefcase" />
+                </span>
+                <h3 className="font-black dark:text-white">{item}</h3>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
     </PageShell>
   );
+}
+
+function AnimatedCounter({ value, suffix }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCount((current) => Math.min(value, current + Math.ceil(value / 24)));
+    }, 35);
+    return () => window.clearInterval(timer);
+  }, [value]);
+
+  return <p className="text-4xl font-black text-primary dark:text-blue-300">{count}{suffix}</p>;
 }

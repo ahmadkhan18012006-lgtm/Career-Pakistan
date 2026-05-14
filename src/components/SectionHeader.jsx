@@ -10,10 +10,10 @@ export default function SectionHeader({ eyebrow, title, description, align = "le
       transition={{ duration: 0.45 }}
     >
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h2 className="mt-4 text-3xl font-black tracking-tight text-secondary sm:text-4xl lg:text-5xl">
+      <h2 className="mt-4 text-3xl font-black tracking-tight text-secondary sm:text-4xl lg:text-5xl dark:text-white">
         {title}
       </h2>
-      {description && <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">{description}</p>}
+      {description && <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg dark:text-slate-300">{description}</p>}
     </motion.div>
   );
 }

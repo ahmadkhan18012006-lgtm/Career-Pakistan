@@ -13,8 +13,8 @@ export default function Footer() {
               </span>
               <span className="text-lg font-black">CareerPath Pakistan</span>
             </div>
-            <p className="max-w-md text-sm leading-7 text-slate-400">
-              A frontend prototype for BSCS, IT and Data Science students who want clearer tech career direction in Pakistan.
+          <p className="max-w-md text-sm leading-7 text-slate-400">
+              A smart career guidance platform for BSCS, IT, SE, AI and Data Science students in Pakistan.
             </p>
           </div>
 
@@ -26,6 +26,8 @@ export default function Footer() {
               <Link to="/insights" className="hover:text-white">Insights</Link>
               <Link to="/compare" className="hover:text-white">Compare Fields</Link>
               <Link to="/dashboard" className="hover:text-white">Dashboard</Link>
+              <Link to="/companies" className="hover:text-white">Companies</Link>
+              <Link to="/premium" className="hover:text-white">Premium</Link>
             </div>
           </div>
 

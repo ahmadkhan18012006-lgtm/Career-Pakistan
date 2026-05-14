@@ -4,6 +4,9 @@ import express from "express";
 import mongoose from "mongoose";
 import fieldRoutes from "./routes/fieldRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import progressRoutes from "./routes/progressRoutes.js";
+import recommendationRoutes from "./routes/recommendationRoutes.js";
 
 dotenv.config();
 
@@ -20,6 +23,9 @@ app.get("/api/health", (req, res) => {
 
 app.use("/api/fields", fieldRoutes);
 app.use("/api/students", studentRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/progress", progressRoutes);
+app.use("/api/recommendations", recommendationRoutes);
 
 async function startServer() {
   try {
