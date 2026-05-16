@@ -11,7 +11,8 @@ const navItems = [
   { label: "Career Quiz", path: "/quiz" },
   { label: "Roadmaps", path: "/roadmaps/web-development" },
   { label: "Insights", path: "/insights" },
-  { label: "Companies", path: "/companies" }
+  { label: "Mentorship", path: "/mentorship" },
+  { label: "Hiring", path: "/hiring" }
 ];
 
 export default function Navbar() {
@@ -47,6 +48,9 @@ export default function Navbar() {
             ))}
             <NavLink to="/compare" className={linkClass}>
               Compare
+            </NavLink>
+            <NavLink to="/companies" className={linkClass}>
+              Companies
             </NavLink>
           </nav>
 
@@ -101,6 +105,12 @@ export default function Navbar() {
             ))}
             <NavLink to="/compare" className={linkClass} onClick={() => setOpen(false)}>
               Compare
+            </NavLink>
+            <NavLink to="/companies" className={linkClass} onClick={() => setOpen(false)}>
+              Companies
+            </NavLink>
+            <NavLink to="/sessions" className={linkClass} onClick={() => setOpen(false)}>
+              My Sessions
             </NavLink>
             <NavLink to="/premium" className={linkClass} onClick={() => setOpen(false)}>
               Premium

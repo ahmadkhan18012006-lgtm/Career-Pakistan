@@ -15,6 +15,9 @@ const CompaniesPage = lazy(() => import("../pages/CompaniesPage.jsx"));
 const ProfilePage = lazy(() => import("../pages/ProfilePage.jsx"));
 const PremiumPage = lazy(() => import("../pages/PremiumPage.jsx"));
 const AuthPages = lazy(() => import("../pages/AuthPage.jsx"));
+const MentorshipPage = lazy(() => import("../pages/MentorshipPage.jsx"));
+const MySessionsPage = lazy(() => import("../pages/MySessionsPage.jsx"));
+const HiringEcosystemPage = lazy(() => import("../pages/HiringEcosystemPage.jsx"));
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -37,6 +40,9 @@ export default function AppRoutes() {
           <Route path="/forgot-password" element={<AuthPages mode="forgot" />} />
           <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
           <Route path="/premium" element={<ProtectedRoute><PremiumPage /></ProtectedRoute>} />
+          <Route path="/mentorship" element={<MentorshipPage />} />
+          <Route path="/sessions" element={<MySessionsPage />} />
+          <Route path="/hiring" element={<HiringEcosystemPage />} />
         </Routes>
       </Suspense>
     </AnimatePresence>
