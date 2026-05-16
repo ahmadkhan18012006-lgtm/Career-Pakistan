@@ -28,6 +28,8 @@ export default function Footer() {
               <Link to="/dashboard" className="hover:text-white">Dashboard</Link>
               <Link to="/companies" className="hover:text-white">Companies</Link>
               <Link to="/premium" className="hover:text-white">Premium</Link>
+              <Link to="/mentorship" className="hover:text-white">Mentorship</Link>
+              <Link to="/hiring" className="hover:text-white">Hiring</Link>
             </div>
           </div>
 
